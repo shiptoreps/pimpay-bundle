@@ -2,9 +2,34 @@
 
 namespace PimpayBundle\Service;
 
+use PimpayBundle\Model\AcceptClientParams;
+use PimpayBundle\Model\OrderItem;
+use PimpayBundle\Model\OrderState;
+use PimpayBundle\Model\PaymentOrder;
+use PimpayBundle\Model\RejectedPayment;
+use PimpayBundle\Model\RequestedPayment;
+use PimpayBundle\Model\VerificationRow;
+
 /**
  * Class SoapClientService
  * @package PimpayBundle\Service
+ * @method acceptClient(string $token, AcceptClientParams $client)
+ * @method getClient(string $token, string $tin)
+ * @method sendVerification(string $token, string $tin, int $id, PaymentOrder $paymentOrder, VerificationRow[] $rows)
+ * @method updateStateForOrders(string $token, OrderState[] $orderStates)
+ * @method upsertHistoricalOrders(string $token, OrderItem[] $orders)
+ * @method upsertOrders(string $token, OrderItem[] $orders)
+ * @method invokeUsingContainer(string $token, string $requestContainer, string $requestSignature)
+ * @method testHeaderSignature(string $token)
+ * @method getVerificationStatus(string $token, int $id)
+ * @method getDeliveryServices(string $token)
+ * @method getRequestedPayments(string $token)
+ * @method rejectPayments(string $token, RejectedPayment[] $payments)
+ * @method requestPayments(string $token, RequestedPayment[] $payments)
+ * @method getClientsBalance(string $token, string[] $tins)
+ * @method getRussianPostClaimAnswers(string $token, string $tin, string[] $postIds)
+ * @method getRussianPostPayments(string $token, string $tin, string[] $postIds)
+ * @method testContainerSignature(string $token, string $container, string $signature)
  */
 class SoapClientService extends \SoapClient
 {
