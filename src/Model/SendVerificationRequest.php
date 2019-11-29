@@ -37,17 +37,6 @@ class SendVerificationRequest
     }
 
     /**
-     * @param string $token
-     * @return SendVerificationRequest
-     */
-    public function setToken(string $token)
-    {
-        $this->token = $token;
-
-        return $this;
-    }
-
-    /**
      * @return string
      */
     public function getTin(): string
@@ -121,5 +110,13 @@ class SendVerificationRequest
         $this->rows = $rows;
 
         return $this;
+    }
+
+    /**
+     * @param VerificationRow $row
+     */
+    public function addRow(VerificationRow $row)
+    {
+        $this->rows[] = $row;
     }
 }

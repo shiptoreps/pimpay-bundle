@@ -59,7 +59,7 @@ class ApiService
      */
     public function __construct(array $params, CryptoHandlerInterface $cryptoHandler)
     {
-        $this->wsdl = file_get_contents('http://platform.api.pimpay.ru/v2_7/soap/wsdl');
+        $this->wsdl = file_get_contents(__DIR__.'/../Resources/wsdl.xml');
         $this->token = $params['token'];
         $this->cryptoHandler = $cryptoHandler;
         $this->soapClient = new SoapClientService($this, 'data://text/xml;base64,'.base64_encode($this->wsdl), [
@@ -118,7 +118,7 @@ class ApiService
 
     /**
      * @param array $orders
-     * @return mixed
+     * @return UpsertResultResponse
      */
     public function upsertOrders(array $orders)
     {
@@ -132,5 +132,14 @@ class ApiService
     public function sendVerification(SendVerificationRequest $request)
     {
         return $this->soapClient->sendVerification($this->token, $request->getTin(), $request->getId(), $request->getPaymentOrder(), $request->getRows());
+    }
+
+    /**
+     * @param $container
+     * @return mixed
+     */
+    public function testContainerSignature($container)
+    {
+        return $this->soapClient->testContainerSignature($this->token, $container, '123');
     }
 }

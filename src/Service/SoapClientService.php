@@ -29,7 +29,7 @@ use PimpayBundle\Model\VerificationRow;
  * @method getClientsBalance(string $token, string[] $tins)
  * @method getRussianPostClaimAnswers(string $token, string $tin, string[] $postIds)
  * @method getRussianPostPayments(string $token, string $tin, string[] $postIds)
- * @method testContainerSignature(string $token, string $container, string $signature)
+ * @method testContainerSignature(string $token, string $container, string $str)
  */
 class SoapClientService extends \SoapClient
 {

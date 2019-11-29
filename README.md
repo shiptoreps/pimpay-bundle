@@ -3,9 +3,6 @@ PimPay Bundle
 
 This Bundle integrate the [Pimpay API Wrapper](http://platform.api.pimpay.ru/v2_6/docs/methods) into your Symfony Project.
 
-[![Build Status](https://travis-ci.org/vragovR/pimpay-bundle.svg?branch=master)](https://travis-ci.org/vragovR/pimpay-bundle)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vragovR/pimpay-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vragovR/pimpay-bundle/?branch=master)
-[![Code Climate](https://codeclimate.com/github/vragovR/pimpay-bundle/badges/gpa.svg)](https://codeclimate.com/github/vragovR/pimpay-bundle)
 
 Installation
 ------------
@@ -13,7 +10,7 @@ Installation
 ### 1: Download
 
 ```bash
-$ composer require vragovr/pimpay-bunle "dev-master"
+$ composer require shiptoreps/pimpay-bunle "0.0.1"
 ```
 
 ### 2: Enable

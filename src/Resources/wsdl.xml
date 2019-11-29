@@ -1242,7 +1242,8 @@
 
     <wsdl:service name="PlatformApiService">
         <wsdl:port name="PlatformApiPort" binding="tns:PlatformApiBinding">
-            <soap:address location="http://platform.api.pimpay.ru/v2_7/soap/invoke"/>
+<!--            <soap:address location="http://platform.api.pimpay.ru/v2_7/soap/invoke"/>-->
+            <soap:address location="https://platform.api.platform-api-stand.pp.ppdev.ru/v2_7/soap/invoke"/>
         </wsdl:port>
     </wsdl:service>
 </definitions>
