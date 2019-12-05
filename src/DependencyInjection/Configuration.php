@@ -32,6 +32,9 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('hash')
                     ->isRequired()
                 ->end()
+                ->booleanNode('test')
+                    ->defaultFalse()
+                ->end()
             ->end();
 
         return $treeBuilder;

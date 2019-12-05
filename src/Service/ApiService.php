@@ -86,6 +86,7 @@ class ApiService
                     'RussianPostPaymentInfo' => RussianPostPaymentInfo::class,
                     'RussianPostPayment' => RussianPostPayment::class,
                 ],
+                'test' => $params['test'],
             ]
         );
     }

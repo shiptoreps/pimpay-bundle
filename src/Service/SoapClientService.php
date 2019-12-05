@@ -44,6 +44,11 @@ class SoapClientService extends \SoapClient
     protected $context;
 
     /**
+     * @var bool
+     */
+    private $test = false;
+
+    /**
      * SoapClientService constructor.
      * @param ApiService $apiService
      * @param string     $wsdl
@@ -55,6 +60,9 @@ class SoapClientService extends \SoapClient
         $this->apiService = $apiService;
         $this->context = stream_context_create();
         $options = array_merge($options, ['stream_context' => $this->context]);
+        if ($this->test = $options['test'] ?? false) {
+            unset($options['test']);
+        }
 
         parent::__construct($wsdl, $options);
 
@@ -63,6 +71,10 @@ class SoapClientService extends \SoapClient
         $signatureHeader = new \SoapHeader('urn:PlatformApiWsdl', 'signature', null, false);
 
         $this->__setSoapHeaders([$clientHeader, $versionHeader, $signatureHeader]);
+
+        if ($this->test) {
+            $this->__setLocation('https://platform.api.platform-api-stand.pp.ppdev.ru/v2_7/soap/invoke');
+        }
     }
 
     /**
@@ -86,5 +98,13 @@ class SoapClientService extends \SoapClient
     public function getStreamContext()
     {
         return $this->context;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isTest(): bool
+    {
+        return $this->test;
     }
 }
