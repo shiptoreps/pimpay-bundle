@@ -46,7 +46,7 @@ class VerificationRow
     /**
      * @var CustomTransaction[]
      */
-    private $txs = [];
+    private $txs;
 
     /**
      * @return string
