@@ -68,6 +68,6 @@ class RussianPostPayment
      */
     public function setRegisteredAt(\DateTime $registeredAt)
     {
-        $this->registeredAt = $registeredAt->format('Y-m-d H:i:s');
+        $this->registeredAt = $registeredAt->format(DateTime::FORMAT);
     }
 }

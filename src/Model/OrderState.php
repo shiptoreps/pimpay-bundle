@@ -136,7 +136,7 @@ class OrderState
      */
     public function setTime(\DateTime $time)
     {
-        $this->time = $time->format('Y-m-d H:i:s');
+        $this->time = $time->format(DateTime::FORMAT);
     }
 
     /**

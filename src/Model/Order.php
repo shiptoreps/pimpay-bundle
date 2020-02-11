@@ -198,7 +198,7 @@ class Order
      */
     public function setCreatedAt(\DateTime $createdAt)
     {
-        $this->createdAt = $createdAt->format('Y-m-d H:i:s');
+        $this->createdAt = $createdAt->format(DateTime::FORMAT);
 
         return $this;
     }
